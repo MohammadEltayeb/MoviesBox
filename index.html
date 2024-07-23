@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Box</title>
+    <meta name="description" content="Find your next favorite movie with our random movie generator. Filter by rating and genre.">
+    <meta name="keywords" content="movie generator, movie recommendations, random movie">
+    <meta name="author" content="Mohammad Alaa">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ANALYTICS_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_ANALYTICS_ID');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Movies Box</h1>
+        <div class="input-group">
+            <label for="min-rating">Minimum Rating:</label>
+            <input type="number" id="min-rating" name="min-rating" min="0" max="10" step="0.1" value="0">
+        </div>
+        <div class="input-group">
+            <label for="genre">Movies You Like:</label>
+            <select id="genre" name="genre" multiple>
+                <!-- Genres will be populated here -->
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="exclude-genre">Movies You Don't Like:</label>
+            <select id="exclude-genre" name="exclude-genre" multiple>
+                <!-- Genres will be populated here -->
+            </select>
+        </div>
+        <div class="input-group">
+            <button onclick="generateMovie()">Get Random Movie</button>
+        </div>
+        <div id="loading" class="loading">Loading...</div>
+        <div id="movie-details" class="movie-details" style="display:none;">
+            <img id="movie-poster" src="" alt="Movie Poster" aria-labelledby="movie-title">
+            <h2 id="movie-title" aria-live="polite"></h2>
+            <p id="movie-story" aria-live="polite"></p>
+            <p id="movie-rating" aria-live="polite"></p>
+            <p id="movie-genre" aria-live="polite"></p>
+            <p id="movie-release" aria-live="polite"></p>
+            <p id="movie-director" aria-live="polite"></p>
+            <p id="movie-cast" aria-live="polite"></p>
+        </div>
+    </div>
+    <footer>
+        <p>This website developed by Mohammad Alaa</p>
+        <p>
+            <a href="mailto:mohammadalaa125@gmail.com">Contact</a> | 
+            <a href="https://www.buymeacoffee.com/yourusername" target="_blank">Buy Me a Coffee</a>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
