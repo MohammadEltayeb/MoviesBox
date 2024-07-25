@@ -22,7 +22,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+function trackButtonClick() {
+    gtag('event', 'click', {
+        'event_category': 'Button',
+        'event_label': 'Get Random Movie'
+    });
+}
+
 async function generateMovie() {
+    trackButtonClick(); // Track the button click
+
     const loadingElement = document.getElementById("loading");
     const movieDetailsElement = document.getElementById("movie-details");
     loadingElement.style.display = "block";
